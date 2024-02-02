@@ -20,10 +20,10 @@ const sortOptions = [
   { name: 'Price: High to Low', href: '#', current: false },
 ];
 const subCategories = [
+  { name: 'Shoes', id: 4 },
   { name: 'Fashion', id: 1 },
   { name: 'Electronics', id: 2 },
   { name: 'Furniture', id: 3 },
-  { name: 'Shoes', id: 4 },
   { name: 'Others', id: 5 },
 ];
 const filters = [
@@ -70,7 +70,7 @@ function classNames(...classes) {
 
 const Category = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
-  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(4);
 
   const dispatch = useDispatch();
 
