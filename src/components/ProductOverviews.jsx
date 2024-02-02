@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { StarIcon } from '@heroicons/react/20/solid';
 import { RadioGroup } from '@headlessui/react';
-import { useSelector,useDispatch } from 'react-redux';
-import { addToBag} from '../redux/features/cartSlice';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { addToBag } from '../redux/features/cartSlice';
 
 const product = {
   name: 'Basic Tee 6-Pack',
@@ -69,7 +68,7 @@ const ProductOverviews = () => {
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
   const productItem = useSelector((state) => state.cart.items);
-  
+
   const adding = (list) => {
     dispatch(addToBag(list));
   };
@@ -77,13 +76,20 @@ const ProductOverviews = () => {
   return (
     <div className='bg-white'>
       {productItem.map((list) => (
-        <div className='pt-6' key={list.id}>
+        <div className='pt-6 m-4 md:m-0' key={list.id}>
           {/* Image gallery */}
 
           <div className='mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8'>
             <div>
+              <div className=' block overflow-hidden rounded-lg  lg:hidden'>
+                <img
+                  src={list.images[0]}
+                  alt={list.images[1]}
+                  className='h-full w-full object-cover object-center'
+                />
+              </div>
               <div className='mt-4 lg:row-span-3 lg:mt-0'>
-                <h1 className='text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl pb-5'>
+                <h1 className='text-2xl font-bold font-mono tracking-tight text-gray-900 sm:text-3xl pb-5'>
                   {list.title}
                 </h1>
                 <h2 className='sr-only'>Product information</h2>
@@ -245,7 +251,10 @@ const ProductOverviews = () => {
                     </RadioGroup>
                   </div>
                 </form>
-                <button onClick={()=>adding(list)} className='mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                <button
+                  onClick={() => adding(list)}
+                  className='mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-black px-8 py-3 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                >
                   Add to bag
                 </button>
               </div>
@@ -300,25 +309,23 @@ const ProductOverviews = () => {
 
                 <div className='mt-4'>
                   <ul role='list' className='list-disc space-y-2 pl-4 text-sm'>
-                   
-                      <li className='text-gray-800'>Creation At : 
-                        <span className='text-black font-mono'>
-                          {' '}
-                           {list.creationAt}
-                        </span>
-                      </li>
-                      <li className='text-gray-800'>Updated At : 
-                        <span className='text-black font-mono'>
-                          {' '}
-                           {list.creationAt}
-                        </span>
-                      </li>
-                 
+                    <li className='text-gray-800'>
+                      Creation At :
+                      <span className='text-black font-mono'>
+                        {' '}
+                        {list.creationAt}
+                      </span>
+                    </li>
+                    <li className='text-gray-800'>
+                      Updated At :
+                      <span className='text-black font-mono'>
+                        {' '}
+                        {list.creationAt}
+                      </span>
+                    </li>
                   </ul>
                 </div>
               </div>
-
-             
             </div>
           </div>
         </div>
