@@ -1,8 +1,15 @@
-# React + Vite
+# Redux + Vite + Tostify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site Link : https://gen-z-fashion.netlify.app
 
-Currently, two official plugins are available:
+## Home Page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![image.png](https://i.postimg.cc/L8L7rsjG/image.png)](https://postimg.cc/qNBjK4bG)
+
+## Product Page
+
+[![image.png](https://i.postimg.cc/x16xrbcx/image.png)](https://postimg.cc/v46LfT7f)
+
+## Cart
+
+[![image.png](https://i.postimg.cc/SNv2wSmL/image.png)](https://postimg.cc/Wh01ZPFt)
